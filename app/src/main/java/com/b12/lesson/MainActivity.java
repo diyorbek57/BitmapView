@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         });
         Button button1 = findViewById(R.id.button2);
         button1.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
+            Intent intent = new Intent(MainActivity.this, SendEmail.class);
             startActivity(intent);
         });
 

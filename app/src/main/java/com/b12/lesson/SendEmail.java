@@ -3,16 +3,20 @@ package com.b12.lesson;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputLayout;
 
-public class ThirdActivity extends AppCompatActivity {
+public class SendEmail extends AppCompatActivity {
 
     TextInputLayout toEmailAddressEdt, subjectEmailAddressEdt, messageEdt;
-Button button;
+    Button button;
+    final String[] mEmailAddresses = {"khamdamov.dio@gmail.com", "hosmerdiyir57@gmail.com"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +24,10 @@ Button button;
         toEmailAddressEdt = findViewById(R.id.edt_email_to);
         subjectEmailAddressEdt = findViewById(R.id.edt_email_Subject);
         messageEdt = findViewById(R.id.edt_email_message);
-        button=findViewById(R.id.btn_send);
+        AutoCompleteTextView editText = findViewById(R.id.edt_autoComplete_to);
+        button = findViewById(R.id.btn_send);
+        editText.setAdapter(new ArrayAdapter<>(this,
+                android.R.layout.simple_dropdown_item_1line, mEmailAddresses));
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,7 +38,7 @@ Button button;
     }
 
     private void backToHomeActivity() {
-        Intent intent = new Intent(ThirdActivity.this, MainActivity.class);
+        Intent intent = new Intent(SendEmail.this, MainActivity.class);
         startActivity(intent);
     }
 
