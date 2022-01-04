@@ -1,38 +1,40 @@
 package com.b12.lesson;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.os.Bundle;
+import android.webkit.WebView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
-import android.app.ProgressDialog;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.os.Bundle;
-import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.Button;
-
 public class SecondActivity extends AppCompatActivity {
-
+    WebView webView;
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        WebView myWebView = (WebView) findViewById(R.id.webView);
-        Button button=findViewById(R.id.back_btn);
+        Intent intent = getIntent();
+        String action = intent.getAction();
+        String type = intent.getType();
 
-        WebSettings webSettings = myWebView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-
-        myWebView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                myWebView.goBack();
+        webView = findViewById(R.id.webView);
+        if (Intent.ACTION_SEND.equals(action) && type != null) {
+            if ("text/*".equals(type)) {
+                handleSendText(intent); // Handle text being sent
             }
-        });
-        myWebView.loadUrl("https://stackoverflow.com/");
+        }
     }
+
+    void handleSendText(Intent intent) {
+        String sharedText = intent.getStringExtra(Intent.EXTRA_TEXT);
+        if (sharedText != null) {
+            setUrlToWebView(sharedText);
+        }
+    }
+
+    private void setUrlToWebView(String url) {
+        webView.loadUrl(url);
+    }
+
 }
