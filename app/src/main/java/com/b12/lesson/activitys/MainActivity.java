@@ -1,4 +1,4 @@
-package com.b12.lesson;
+package com.b12.lesson.activitys;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.b12.lesson.R;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -34,16 +36,12 @@ public class MainActivity extends AppCompatActivity {
 
         Button button = findViewById(R.id.button1);
         button.setOnClickListener(v -> {
-            Intent sendIntent = new Intent();
-            sendIntent.setAction(Intent.ACTION_SEND);
-            sendIntent.putExtra(Intent.EXTRA_TEXT, "https://developer.android.com/");
-            sendIntent.setType("text/*");
-            Intent shareIntent = Intent.createChooser(sendIntent, null);
-            startActivity(shareIntent);
+          Intent intent=new Intent(MainActivity.this,ReceivingUrlActivity.class);
+          startActivity(intent);
         });
         Button button1 = findViewById(R.id.button2);
         button1.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, SendEmail.class);
+            Intent intent = new Intent(MainActivity.this, EditTextActivity.class);
             startActivity(intent);
         });
         Button button2 = findViewById(R.id.button3);

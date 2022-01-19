@@ -1,4 +1,4 @@
-package com.b12.lesson;
+package com.b12.lesson.activitys;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.b12.lesson.R;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class SendEmail extends AppCompatActivity {

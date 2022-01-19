@@ -5,10 +5,16 @@
       <map>
         <entry key="..\:/Programming/AndroidProjects/Lesson2/app/src/main/res/layout-land/activity_main.xml" value="0.2015625" />
         <entry key="..\:/Programming/AndroidProjects/Lesson2/app/src/main/res/layout-land/activity_second.xml" value="0.2015625" />
+        <entry key="..\:/Programming/AndroidProjects/Lesson2/app/src/main/res/layout-sw600dp/activity_main.xml" value="0.1" />
         <entry key="..\:/Programming/AndroidProjects/Lesson2/app/src/main/res/layout-sw600dp/activity_second.xml" value="0.131640625" />
+        <entry key="..\:/Programming/AndroidProjects/Lesson2/app/src/main/res/layout/activity_custom_recycler.xml" value="0.17552083333333332" />
+        <entry key="..\:/Programming/AndroidProjects/Lesson2/app/src/main/res/layout/activity_edit_text.xml" value="0.16145833333333334" />
         <entry key="..\:/Programming/AndroidProjects/Lesson2/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
         <entry key="..\:/Programming/AndroidProjects/Lesson2/app/src/main/res/layout/activity_second.xml" value="0.17552083333333332" />
         <entry key="..\:/Programming/AndroidProjects/Lesson2/app/src/main/res/layout/activity_third.xml" value="0.17552083333333332" />
+        <entry key="..\:/Programming/AndroidProjects/Lesson2/app/src/main/res/layout/activity_wifi.xml" value="0.17552083333333332" />
+        <entry key="..\:/Programming/AndroidProjects/Lesson2/app/src/main/res/layout/item_custom_recycler.xml" value="0.17552083333333332" />
+        <entry key="..\:/Programming/AndroidProjects/Lesson2/app/src/main/res/layout/item_wifi.xml" value="0.17552083333333332" />
       </map>
     </option>
   </component>
