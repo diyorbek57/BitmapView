@@ -41,8 +41,8 @@ public class EditTextActivity extends AppCompatActivity {
         SpannableString hashtags = new SpannableString(text);
         setSpanComment(hashtags, getSpans(text));
         textView.setMovementMethod(LinkMovementMethod.getInstance());
-        editText.getEditText().setMovementMethod(LinkMovementMethod.getInstance());
-        editText.getEditText().setText(hashtags);
+
+        textView.setText(hashtags);
     }
 
     private void inits() {
@@ -56,22 +56,6 @@ public class EditTextActivity extends AppCompatActivity {
             }
         });
 
-        editText.getEditText().addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                editAndDisplayText();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
     }
 
     public ArrayList<int[]> getSpans(String text) {
